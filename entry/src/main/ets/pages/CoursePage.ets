@@ -3,7 +3,7 @@ import { CourseInfo } from "../interface/CourseInfo";
 import { CourseRequestUtils } from "../utils/CourseRequestUtils";
 
 @Builder
-export function CoursePageBuilder(){
+export function CoursePageBuilder() {
   CoursePage()
 }
 
@@ -17,7 +17,7 @@ export struct CoursePage {
   @State isLoading: boolean = false;
 
   build() {
-    NavDestination(){
+    NavDestination() {
       Column() {
         // Top bar
         this.buildTopBar()
@@ -184,7 +184,10 @@ export struct CoursePage {
   private async fetchCourseList(query: string = ''): Promise<void> {
     try {
       this.isLoading = true;
-      this.courseList = await CourseRequestUtils.getCourseList(query);
+      // 对 query 参数进行 URL 编码
+      const encodedQuery = encodeURIComponent(query);
+      this.courseList = await CourseRequestUtils.getCourseList(encodedQuery);
+      console.log(`已获取课程列表: ${this.courseList.length} items`);
     } catch (error) {
       console.error('获取课程列表失败:', error);
       // Show error message or retry option
@@ -208,5 +211,4 @@ export struct CoursePage {
       clearTimeout(this.searchTimer);
     }
   }
-
 }
