@@ -9,6 +9,7 @@ export function LearningCoursePageBuilder(name:string, param:string){
 
 @Component
 @Entry
+@Preview
 export struct LearningCoursePage {
   @Consume('pageInfos') pageInfos!: NavPathStack;
   courseId: string = '';
@@ -151,7 +152,7 @@ export struct LearningCoursePage {
               this.pageInfos.pop()
             })
 
-          Text('Leming WebRunner')
+          Text('课程学习')
             .fontSize(18)
             .fontColor(Color.White)
             .fontWeight(FontWeight.Medium)

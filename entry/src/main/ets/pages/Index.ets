@@ -10,7 +10,7 @@ struct Index {
   @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack();
 
   aboutToAppear(): void {
-    this.pageInfos.pushPath({name:"CoursePage" });
+    this.pageInfos.pushPath({name:"LoginPage" });
   }
 
   build() {
