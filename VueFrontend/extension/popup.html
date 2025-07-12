@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>测盟会录制插件</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .status.recording {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ef5350;
+        }
+        
+        .status.ready {
+            background-color: #e8f5e8;
+            color: #2e7d32;
+            border: 1px solid #4caf50;
+        }
+        
+        .controls {
+            text-align: center;
+        }
+        
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            min-width: 120px;
+        }
+        
+        .start-btn {
+            background-color: #4caf50;
+            color: white;
+        }
+        
+        .start-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .stop-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .stop-btn:hover {
+            background-color: #da190b;
+        }
+        
+        .disabled {
+            background-color: #cccccc !important;
+            cursor: not-allowed !important;
+        }
+        
+        .info {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .duration {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>测盟会会议录制</h3>
+    </div>
+    
+    <div id="status" class="status ready">
+        准备录制
+    </div>
+    
+    <div class="controls">
+        <button id="startBtn" class="start-btn">开始录制</button>
+    </div>
+    
+    <div id="duration" class="duration" style="display: none;">
+        时长: <span id="durationText">00:00</span>
+    </div>
+    
+    <div class="info">
+        点击“开始录制”即可开始捕捉当前标签页的音频和视频。<br>
+        <span style="color:#c62828;font-weight:bold;display:block;margin-top:8px;">退出会议后自动停止录制并上传，不必担心。</span>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
+
