@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{newsDetail.title}}</text>
+    <view class="meta">
+      <text class="author">作者: {{newsDetail.author}}</text>
+      <text class="time">发布时间: {{newsDetail.createdTime}}</text>
+      <text class="status">状态: {{newsDetail.status}}</text>
+      <text class="views">浏览: {{newsDetail.viewCount || 0}}</text>
+    </view>
+    <view class="summary">{{newsDetail.summary}}</view>
+  </view>
+
+  <!-- 封面图片 -->
+  <image wx:if="{{newsDetail.cover}}" class="cover-image" src="{{newsDetail.cover}}" mode="widthFix" />
+
+  <!-- 富文本内容 -->
+  <rich-text class="content" nodes="{{nodes}}"></rich-text>
+
+  <!-- 加载状态 -->
+  <view wx:if="{{loading}}" class="loading">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 错误状态 -->
+  <view wx:if="{{error}}" class="error">
+    <text>{{error}}</text>
+    <button bindtap="retryLoad">重新加载</button>
+  </view>
+</view>

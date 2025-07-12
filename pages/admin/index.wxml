@@ -1,0 +1,20 @@
+<view class="container">
+  <view wx:if="{{!isLogin}}" class="login-box">
+    <input class="input" placeholder="请输入管理员账号" bindinput="onAccountInput" />
+    <input class="input" placeholder="请输入密码" password bindinput="onPasswordInput" />
+    <button class="login-btn" bindtap="onLogin">登录</button>
+    <view class="tip" wx:if="{{loginError}}">账号或密码错误</view>
+  </view>
+  <view wx:elif="{{isLogin}}">
+    <view class="title">行业动态浏览量统计</view>
+    <view class="stat-list">
+      <block wx:for="{{stats}}" wx:key="id">
+        <view class="stat-item">
+          <text class="stat-title">{{item.title}}</text>
+          <text class="stat-count">浏览量：{{item.viewCount}}</text>
+        </view>
+      </block>
+    </view>
+    <button class="logout-btn" bindtap="onLogout">退出登录</button>
+  </view>
+</view> 

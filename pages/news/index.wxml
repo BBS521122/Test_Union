@@ -1,0 +1,42 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input 
+      placeholder="请输入动态标题或关键词" 
+      bindinput="onSearchInput"
+      value="{{searchKeyword}}"
+    />
+    <button class="search-btn" bindtap="onSearch">搜索</button>
+    <button class="admin-btn" bindtap="goToAdmin">管理端入口</button>
+  </view>
+
+  <!-- 动态列表 -->
+  <scroll-view 
+    scroll-y 
+    style="height: calc(100vh - 110rpx)"
+    bindscrolltolower="loadMore"
+    refresher-enabled="{{true}}"
+    bindrefresherrefresh="onRefresh"
+    refresher-triggered="{{refreshing}}"
+  >
+    <block wx:for="{{newsList}}" wx:key="id">
+      <view class="news-item" bindtap="navigateToDetail" data-id="{{item.id}}">
+        <image class="cover" src="{{item.cover}}" mode="aspectFill" />
+        <view class="content">
+          <text class="title">{{item.title}}</text>
+          <text class="summary">{{item.summary}}</text>
+          <view class="meta">
+            <text class="author">{{item.author}}</text>
+            <text class="time">{{item.createdTime}}</text>
+            <text class="status">{{item.status}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    
+    <!-- 加载状态提示 -->
+    <view class="loading-tip">
+      {{loading ? '加载中...' : noMoreData ? '没有更多数据了' : ''}}
+    </view>
+  </scroll-view>
+</view>
