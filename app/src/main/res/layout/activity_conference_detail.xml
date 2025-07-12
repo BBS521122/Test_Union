@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F7F9FA">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp">
+
+            <!-- 返回按钮靠左 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/back_icon"
+                app:iconTint="#000000"
+                app:iconSize="24dp"
+                android:contentDescription="返回主页"
+                app:backgroundTint="@android:color/transparent"
+                android:textColor="#1976D2"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp" />
+
+            <!-- 填写参会回执按钮靠右 -->
+            <Button
+                android:id="@+id/btnFillReceipt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="填写参会回执"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1976D2"
+                android:minHeight="40dp"
+                android:minWidth="120dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <!-- 封面图 -->
+        <ImageView
+            android:id="@+id/imgCover"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_title_gradient"
+            android:contentDescription="会议封面"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 会议名称 -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="会议名称"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 创建者 -->
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="主办单位：xxx"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_marginBottom="4dp" />
+
+        <!-- 会议时间 -->
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2025-07-01 10:00 ~ 2025-07-01 18:00"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 富文本内容替换 -->
+        <WebView
+            android:id="@+id/webViewContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+
+    </LinearLayout>
+</ScrollView>
