@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/news/index",
+    "pages/news-detail/index",
+    "pages/admin/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "测盟汇",
+    "enablePullDownRefresh": true
+  }
+}
