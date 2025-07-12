@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F9FA"
+    android:padding="16dp"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_title_gradient"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/back_icon"
+                app:iconTint="#000000"
+                app:iconSize="24dp"
+                android:contentDescription="返回主页"
+                app:backgroundTint="@android:color/transparent"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="参会回执"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF" />
+        </RelativeLayout>
+
+        <!-- 单位 -->
+        <TextView style="@style/FormLabel" android:text="*单位" />
+        <EditText android:id="@+id/editUnit" style="@style/FormInput" android:hint="请输入单位" />
+
+        <!-- 姓名 -->
+        <TextView style="@style/FormLabel" android:text="*姓名" />
+        <EditText android:id="@+id/editName" style="@style/FormInput" android:hint="请输入姓名" />
+
+        <!-- 性别 -->
+        <TextView style="@style/FormLabel" android:text="*性别" />
+        <RadioGroup android:id="@+id/radioGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbMale" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="男" android:buttonTint="#2196F3" />
+            <RadioButton android:id="@+id/rbFemale" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="女" android:buttonTint="#2196F3" />
+        </RadioGroup>
+
+        <!-- 手机号 -->
+        <TextView style="@style/FormLabel" android:text="*手机号" />
+        <EditText android:id="@+id/editPhone" style="@style/FormInput" android:hint="请输入手机号码" android:inputType="phone" />
+
+        <!-- 邮箱 -->
+        <TextView style="@style/FormLabel" android:text="*电子邮箱" />
+        <EditText android:id="@+id/editEmail" style="@style/FormInput" android:hint="请输入电子邮箱" android:inputType="textEmailAddress" />
+
+        <!-- 房型 -->
+        <TextView style="@style/FormLabel" android:text="*房型" />
+        <RadioGroup android:id="@+id/radioRoomType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbDoubleRoom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="双人房" android:buttonTint="#2196F3" />
+            <RadioButton android:id="@+id/rbSingleRoom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="单人房" android:buttonTint="#2196F3" />
+        </RadioGroup>
+
+        <!-- 到达方式 -->
+        <TextView style="@style/FormLabel" android:text="*到达方式" />
+        <RadioGroup android:id="@+id/radioArrival"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbArrivalAirport" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保山机场" android:buttonTint="#2196F3" />
+            <RadioButton android:id="@+id/rbArrivalStation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保山站" android:buttonTint="#2196F3" />
+            <RadioButton android:id="@+id/rbArrivalDrive" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="自驾" android:buttonTint="#2196F3" />
+        </RadioGroup>
+
+        <!-- 到达车次 -->
+        <TextView style="@style/FormLabel" android:text="到达车次/航班" />
+        <EditText android:id="@+id/editArrivalTrain" style="@style/FormInput" android:hint="请输入车次/航班" />
+
+        <!-- 到达时间 -->
+        <TextView style="@style/FormLabel" android:text="*到达时间" />
+        <EditText
+            android:id="@+id/editArrivalTime"
+            style="@style/FormInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="选择到达时间"
+            android:focusable="false" />
+
+        <!-- 返程方式 -->
+        <TextView style="@style/FormLabel" android:text="*返程方式" />
+        <RadioGroup android:id="@+id/radioReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbReturnAirport" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保山机场" android:buttonTint="#2196F3" />
+            <RadioButton android:id="@+id/rbReturnStation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保山站" android:buttonTint="#2196F3" />
+            <RadioButton android:id="@+id/rbReturnDrive" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="自驾" android:buttonTint="#2196F3" />
+        </RadioGroup>
+
+        <!-- 返程车次 -->
+        <TextView style="@style/FormLabel" android:text="返程车次/航班" />
+        <EditText android:id="@+id/editReturnTrain" style="@style/FormInput" android:hint="请输入返程车次/航班" />
+
+        <!-- 返程时间 -->
+        <TextView style="@style/FormLabel" android:text="*返程时间" />
+        <EditText android:id="@+id/editReturnTime" style="@style/FormInput" android:hint="选择返程时间" android:focusable="false" />
+
+        <!-- 备注 -->
+        <TextView style="@style/FormLabel" android:text="备注" />
+        <EditText android:id="@+id/editRemarks" style="@style/FormInput" android:hint="请输入备注" android:minHeight="100dp" android:gravity="top" android:inputType="textMultiLine" />
+
+        <!-- 提交按钮 -->
+        <Button android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="提交"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#1976D2"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</ScrollView>
+

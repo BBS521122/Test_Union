@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+<!-- 基础主题 -->
+<style name="Theme.HelloWorld" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <!-- 原始主题设置 -->
+</style>
+
+<!-- 无标题栏主题 -->
+<style name="Theme.HelloWorld.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!-- 继承原始主题的其他设置 -->
+    <item name="colorPrimary">@color/purple_200</item>
+    <item name="colorPrimaryVariant">@color/purple_700</item>
+    <item name="colorOnPrimary">@color/black</item>
+    <!-- 添加其他需要的属性 -->
+</style>
+</resources>
